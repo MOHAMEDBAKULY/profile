@@ -1,13 +1,51 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.card {
+  width: 500px;
+  height: 600px;
+  border: solid black 3px;
+  border-radius: 8px;
+}
+
+.card header {
+  margin: 4px;
+  text-align: center;
+}
+
+.image > img {
+  width: 100%;
+  height: 300px;
+  display: block;
+  object-fit: cover;
+}
+
+.myInfo h2 {
+  font-size: 32px;
+  margin-left: 4px;
+}
+
+.myInfo p {
+  margin-left: 4px;
+}
+
+.allSkills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.background {
+  margin: 4px;
+  width: fit-content;
+  padding: 6px;
+  border-radius: 4px;
 }
