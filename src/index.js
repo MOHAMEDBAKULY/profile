@@ -2,6 +2,39 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
+const skills = [
+  {
+    skill: "Html & Css",
+    level: "Advanced",
+    color: "yellow",
+  },
+  {
+    skill: "JavaScript",
+    level: "Intermediate",
+    color: "#98E776",
+  },
+  {
+    skill: "React & Next ",
+    level: "Beginner",
+    color: "Grey",
+  },
+  {
+    skill: "Framer & Figma ",
+    level: "Advanced",
+    color: "#aaffe2",
+  },
+  {
+    skill: "Postman ",
+    level: "Beginner",
+    color: "Orange",
+  },
+  {
+    skill: "Martial Arts ",
+    level: "Intermediate",
+    color: "#3da846",
+  },
+];
+
 const App = () => {
   return (
     <div className="card">
@@ -41,23 +74,43 @@ function Intro() {
 function Skillset() {
   return (
     <div className="allSkills">
-      <Skills language="Html & Css +" emoji="😂" color="yellow" />
+      {skills.map((skilled) => (
+        <Theskills
+          skill={skilled.skill}
+          level={skilled.level}
+          color={skilled.color}
+          key={skilled.skill}
+        />
+      ))}
+
+      {/* <Skills language="Html & Css +" emoji="😂" color="yellow" />
       <Skills language="JavaScript +" emoji="✈️" color="#98E776" />
       <Skills language="React & Next +" emoji="🚀" color="Grey" />
       <Skills language="Framer & Figma +" emoji="🌟" color="#aaffe2" />
       <Skills language="Postman +" emoji="🌌" color="Orange" />
-      <Skills language="Martial Arts +" emoji="🥋" color="#3da846" />
+      <Skills language="Martial Arts +" emoji="🥋" color="#3da846" /> */}
     </div>
   );
 }
 
-function Skills(props) {
+function Theskills({ skill, color, level }) {
   return (
-    <div className="background" style={{ backgroundColor: props.color }}>
-      {props.language} {props.emoji}
+    <div className="background" style={{ backgroundColor: color }}>
+      {skill}
+      {level === "Beginner" && "😂"}
+      {level === "Advanced" && "🚀"}
+      {level === "Intermediate" && "🌟"}
     </div>
   );
 }
+
+// function Skills(props) {
+//   return (
+//     <div className="background" style={{ backgroundColor: props.color }}>
+//       {props.language} {props.emoji}
+//     </div>
+//   );
+// }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
